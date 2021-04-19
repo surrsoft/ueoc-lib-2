@@ -90,7 +90,6 @@ export class UeocLayFlex extends UeocElem {
           // @ts-ignore
           alignSelf: fnNx(this.vChildsStartAlings.find(el => el.child === child)?.align, child.vGeometry?.vWS, child.vGeometry?.vHS)
         };
-        console.log('!!-!!-!! 1321-10 cssOjAdding {210320132109}\n', cssOjAdding); // del+
         child.nobCssOjAddingSet(cssOjAdding)
         return child.build()
       })}
