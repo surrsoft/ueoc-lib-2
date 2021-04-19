@@ -1,5 +1,5 @@
 export { UeocElem } from './UeocElem';
-export { default as UeocEmpty } from './UeocEmpty';
+export { UeocEmpty } from './UeocEmpty';
 export { UeocLayFlex } from './UeocLayFlex';
 export { UeocLayRelative, UeocRelPosition } from './UeocLayRelative';
 export { UeocTextElem } from './UeocTextElem';

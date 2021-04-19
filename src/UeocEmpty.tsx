@@ -5,6 +5,6 @@ interface Props {
   h?: number
 }
 
-export default function (props: Props) {
+export function UeocEmpty (props: Props) {
   return <div style={{width: props.w || 0, height: props.h || 0}} />
 }
