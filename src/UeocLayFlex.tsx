@@ -84,12 +84,11 @@ export class UeocLayFlex extends UeocElem {
     }
 
     return <div className={classes.container}>
-      {this.vChildsStart.map((child, index) => {
+      {this.vChildsStart.map((child) => {
         const cssOjAdding = {
           flexShrink: 0,
           // @ts-ignore
           alignSelf: fnNx(this.vChildsStartAlings.find(el => el.child === child)?.align, child.vGeometry?.vWS, child.vGeometry?.vHS),
-          key: index
         };
         child.nobCssOjAddingSet(cssOjAdding)
         return child.build()
@@ -108,7 +107,7 @@ export class UeocLayFlex extends UeocElem {
       {this.vChildsEnd.map((child, index) => {
         child.nobCssOjAddingSet(
           Object.assign(
-            {flexShrink: 0, key: index}
+            {flexShrink: 0}
             // @ts-ignore
             , {alignSelf: fnNx(this.vChildsEndAlings.find(el => el.child === child)?.align, child.vGeometry?.vWS, child.vGeometry?.vHS)}
             , index === 0
