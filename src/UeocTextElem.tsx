@@ -57,7 +57,7 @@ export class UeocTextElem extends UeocElem {
     return this
   }
 
-  build(key?: number | string): JSX.Element {
+  build(): JSX.Element {
     const cssOj = this.nobCssOj()
 
     if (this.vOtherCss) {
@@ -116,7 +116,9 @@ export class UeocTextElem extends UeocElem {
     })()
 
     // ---
-    return <div key={key} className={classes.container}>
+    const attrs = this.vKey ? {key: this.vKey} : {};
+
+    return <div {...attrs} className={classes.container}>
       {this.vText}
     </div>;
   }

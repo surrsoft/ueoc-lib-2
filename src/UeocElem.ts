@@ -13,6 +13,7 @@ export abstract class UeocElem {
   public vBgColor: string = '';
   public vCssOjAdding?: CreateCSSProperties;
   public vOtherCss?: CreateCSSProperties;
+  public vKey?: number | string;
 
   private fnPaddingsGetAnd() {
     if (!this.vPaddings) {
@@ -66,6 +67,11 @@ export abstract class UeocElem {
 
   paddings(paddings: UeocPaddings): this {
     this.vPaddings = paddings
+    return this
+  }
+
+  key(key: number | string): this {
+    this.vKey = key;
     return this
   }
 
@@ -193,5 +199,5 @@ export abstract class UeocElem {
     return cssOj;
   }
 
-  abstract build(key?: number | string): JSX.Element
+  abstract build(): JSX.Element
 }
