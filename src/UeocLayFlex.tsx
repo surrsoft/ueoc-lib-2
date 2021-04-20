@@ -83,6 +83,8 @@ export class UeocLayFlex extends UeocElem {
       return UeocAlignPlus.toCssFormat(align)
     }
 
+    let keyValue = 0;
+
     return <div className={classes.container}>
       {this.vChildsStart.map((child) => {
         const cssOjAdding = {
@@ -91,7 +93,7 @@ export class UeocLayFlex extends UeocElem {
           alignSelf: fnNx(this.vChildsStartAlings.find(el => el.child === child)?.align, child.vGeometry?.vWS, child.vGeometry?.vHS),
         };
         child.nobCssOjAddingSet(cssOjAdding)
-        return child.build()
+        return child.build(keyValue++)
       })}
       {(() => {
         if (this.vChildBase) {
@@ -99,7 +101,7 @@ export class UeocLayFlex extends UeocElem {
             alignSelf: fnNx(this.vChildBaseAlign, this.vChildBase.vGeometry?.vWS, this.vChildBase.vGeometry?.vHS)
           }
           this.vChildBase.nobCssOjAddingSet(cssOj3)
-          return this.vChildBase.build()
+          return this.vChildBase.build(keyValue++)
         } else {
           return ''
         }
@@ -117,7 +119,7 @@ export class UeocLayFlex extends UeocElem {
               : {}
           )
         )
-        return child.build()
+        return child.build(keyValue++)
       })}
     </div>
   }

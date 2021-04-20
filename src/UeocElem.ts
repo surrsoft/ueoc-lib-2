@@ -193,5 +193,5 @@ export abstract class UeocElem {
     return cssOj;
   }
 
-  abstract build(): JSX.Element
+  abstract build(key?: number | string): JSX.Element
 }
