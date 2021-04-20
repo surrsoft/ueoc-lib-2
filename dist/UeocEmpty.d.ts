@@ -3,5 +3,5 @@ interface Props {
     w?: number;
     h?: number;
 }
-export default function (props: Props): JSX.Element;
+export declare function UeocEmpty(props: Props): JSX.Element;
 export {};

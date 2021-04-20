@@ -1,8 +1,8 @@
-import { UeocElem } from './UeocElem';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { CreateCSSProperties } from '@material-ui/styles';
+import { UeocElem } from './UeocElem';
 import { UeocSize } from './simple/UeocGeometry';
-import React from 'react';
 
 export enum UeocRelPosition {
   TOP_LEFT = 'top_left',

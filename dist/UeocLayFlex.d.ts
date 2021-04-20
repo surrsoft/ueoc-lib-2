@@ -1,6 +1,6 @@
 /// <reference types="react" />
-import { UeocElem } from './UeocElem';
 import { UeocAlign, UeocOrient } from './utils';
+import { UeocElem } from './UeocElem';
 export declare class UeocLayFlex extends UeocElem {
     vOrientation: UeocOrient;
     vChildsStart: UeocElem[];

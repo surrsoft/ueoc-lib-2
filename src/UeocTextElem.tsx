@@ -1,9 +1,9 @@
-import { UeocElem } from './UeocElem';
-import { makeStyles } from '@material-ui/core/styles';
-import { UeocTextStyle } from './simple/UeocTextStyle';
-import { UeocAlign } from './utils';
-import { UeocAlignCls } from './simple/UeocAlignCls';
 import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import { UeocAlign } from './utils';
+import { UeocElem } from './UeocElem';
+import { UeocTextStyle } from './simple/UeocTextStyle';
+import { UeocAlignCls } from './simple/UeocAlignCls';
 
 export class UeocTextElem extends UeocElem {
   vText: string = ''

@@ -1,9 +1,9 @@
-import { UeocElem } from './UeocElem';
-import { UeocAlign, UeocAlignPlus, UeocOrient } from './utils';
-import { makeStyles } from '@material-ui/core/styles';
-import { CreateCSSProperties } from '@material-ui/styles';
-import { UeocSize } from './simple/UeocGeometry';
 import React from 'react';
+import { CreateCSSProperties } from '@material-ui/styles';
+import { makeStyles } from '@material-ui/core/styles';
+import { UeocAlign, UeocAlignPlus, UeocOrient } from './utils';
+import { UeocElem } from './UeocElem';
+import { UeocSize } from './simple/UeocGeometry';
 
 type UeocType1206 = { child: UeocElem, align: UeocAlign }[];
 

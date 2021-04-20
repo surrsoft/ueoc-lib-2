@@ -7,12 +7,10 @@ function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'defau
 var React = _interopDefault(require('react'));
 var styles = require('@material-ui/core/styles');
 
-var UeocSize;
-
 (function (UeocSize) {
   UeocSize["FILL"] = "fill";
   UeocSize["WRAP"] = "wrap";
-})(UeocSize || (UeocSize = {}));
+})(exports.UeocSize || (exports.UeocSize = {}));
 
 var UeocGeometry = /*#__PURE__*/function () {
   function UeocGeometry() {
@@ -277,7 +275,7 @@ var UeocElem = /*#__PURE__*/function () {
 
     var cssOj = {
       display: 'inline-flex',
-      alignSelf: ((_this$vGeometry = this.vGeometry) == null ? void 0 : _this$vGeometry.vHS) === UeocSize.FILL ? 'stretch' : 'start'
+      alignSelf: ((_this$vGeometry = this.vGeometry) == null ? void 0 : _this$vGeometry.vHS) === exports.UeocSize.FILL ? 'stretch' : 'start'
     };
 
     if (this.vGeometry) {
@@ -289,7 +287,7 @@ var UeocElem = /*#__PURE__*/function () {
         cssOj.height = this.vGeometry.vHPx + 'px';
       }
 
-      if (this.vGeometry.vWS === UeocSize.FILL) {
+      if (this.vGeometry.vWS === exports.UeocSize.FILL) {
         cssOj.flexGrow = 1;
       }
     }
@@ -335,7 +333,7 @@ var UeocElem = /*#__PURE__*/function () {
   return UeocElem;
 }();
 
-function UeocEmpty (props) {
+function UeocEmpty(props) {
   return React.createElement("div", {
     style: {
       width: props.w || 0,
@@ -524,11 +522,11 @@ var UeocLayFlex = /*#__PURE__*/function (_UeocElem) {
 
     var fnNx = function fnNx(align, vWS, vHS) {
       if (_this2.vOrientation === exports.UeocOrient.HORIZONTAL) {
-        if (vHS === UeocSize.FILL) {
+        if (vHS === exports.UeocSize.FILL) {
           return 'stretch';
         }
       } else {
-        if (vWS === UeocSize.FILL) {
+        if (vWS === exports.UeocSize.FILL) {
           return 'stretch';
         }
       }
@@ -548,8 +546,6 @@ var UeocLayFlex = /*#__PURE__*/function (_UeocElem) {
           return el.child === child;
         })) == null ? void 0 : _this2$vChildsStartAl.align, (_child$vGeometry = child.vGeometry) == null ? void 0 : _child$vGeometry.vWS, (_child$vGeometry2 = child.vGeometry) == null ? void 0 : _child$vGeometry2.vHS)
       };
-      console.log('!!-!!-!! 1321-10 cssOjAdding {210320132109}\n', cssOjAdding); // del+
-
       child.nobCssOjAddingSet(cssOjAdding);
       return child.build();
     }), function () {
@@ -588,8 +584,6 @@ var UeocLayFlex = /*#__PURE__*/function (_UeocElem) {
   return UeocLayFlex;
 }(UeocElem);
 
-var UeocRelPosition;
-
 (function (UeocRelPosition) {
   UeocRelPosition["TOP_LEFT"] = "top_left";
   UeocRelPosition["TOP_CENTER"] = "top_center";
@@ -600,11 +594,11 @@ var UeocRelPosition;
   UeocRelPosition["CENTER_LEFT"] = "center_left";
   UeocRelPosition["CENTER_CENTER"] = "center_center";
   UeocRelPosition["CENTER_RIGHT"] = "center_right";
-})(UeocRelPosition || (UeocRelPosition = {}));
+})(exports.UeocRelPosition || (exports.UeocRelPosition = {}));
 
 var UeocElemAndPos = function UeocElemAndPos(child, position) {
   if (position === void 0) {
-    position = UeocRelPosition.TOP_LEFT;
+    position = exports.UeocRelPosition.TOP_LEFT;
   }
 
   this.child = child;
@@ -659,33 +653,33 @@ var UeocLayRelative = /*#__PURE__*/function (_UeocElem) {
         cssOj1.position = 'absolute';
 
         if (geom) {
-          if (geom.vHS === UeocSize.FILL && geom.vWS === UeocSize.FILL) {
+          if (geom.vHS === exports.UeocSize.FILL && geom.vWS === exports.UeocSize.FILL) {
             cssOj1.top = 0;
             cssOj1.right = 0;
             cssOj1.left = 0;
             cssOj1.bottom = 0;
           } else {
             switch (position) {
-              case UeocRelPosition.TOP_LEFT:
+              case exports.UeocRelPosition.TOP_LEFT:
                 cssOj1.left = 0;
                 cssOj1.top = 0;
 
-                if (geom.vHS === UeocSize.FILL) {
+                if (geom.vHS === exports.UeocSize.FILL) {
                   cssOj1.bottom = 0;
-                } else if (geom.vWS === UeocSize.FILL) {
+                } else if (geom.vWS === exports.UeocSize.FILL) {
                   cssOj1.right = 0;
                 }
 
                 break;
 
-              case UeocRelPosition.TOP_CENTER:
+              case exports.UeocRelPosition.TOP_CENTER:
                 cssOj1.top = 0;
 
-                if (geom.vHS === UeocSize.FILL) {
+                if (geom.vHS === exports.UeocSize.FILL) {
                   cssOj1.left = '50%';
                   cssOj1.transform = "translate(" + tHoriz(child) + ", 0)";
                   cssOj1.bottom = 0;
-                } else if (geom.vWS === UeocSize.FILL) {
+                } else if (geom.vWS === exports.UeocSize.FILL) {
                   cssOj1.left = 0;
                   cssOj1.right = 0;
                 } else {
@@ -695,39 +689,39 @@ var UeocLayRelative = /*#__PURE__*/function (_UeocElem) {
 
                 break;
 
-              case UeocRelPosition.TOP_RIGHT:
+              case exports.UeocRelPosition.TOP_RIGHT:
                 cssOj1.right = 0;
                 cssOj1.top = 0;
 
-                if (geom.vHS === UeocSize.FILL) {
+                if (geom.vHS === exports.UeocSize.FILL) {
                   cssOj1.bottom = 0;
-                } else if (geom.vWS === UeocSize.FILL) {
+                } else if (geom.vWS === exports.UeocSize.FILL) {
                   cssOj1.left = 0;
                 }
 
                 break;
 
-              case UeocRelPosition.BOTTOM_LEFT:
+              case exports.UeocRelPosition.BOTTOM_LEFT:
                 cssOj1.left = 0;
                 cssOj1.bottom = 0;
 
-                if (geom.vHS === UeocSize.FILL) {
+                if (geom.vHS === exports.UeocSize.FILL) {
                   cssOj1.top = 0;
-                } else if (geom.vWS === UeocSize.FILL) {
+                } else if (geom.vWS === exports.UeocSize.FILL) {
                   cssOj1.right = 0;
                 }
 
                 break;
 
-              case UeocRelPosition.BOTTOM_CENTER:
+              case exports.UeocRelPosition.BOTTOM_CENTER:
                 cssOj1.bottom = 0;
 
-                if (geom.vHS === UeocSize.FILL) {
+                if (geom.vHS === exports.UeocSize.FILL) {
                   cssOj1.left = '50%';
                   cssOj1.transform = "translate(" + tHoriz(child) + ", 0)";
                   cssOj1.bottom = 0;
                   cssOj1.top = 0;
-                } else if (geom.vWS === UeocSize.FILL) {
+                } else if (geom.vWS === exports.UeocSize.FILL) {
                   cssOj1.left = 0;
                   cssOj1.right = 0;
                 } else {
@@ -737,25 +731,25 @@ var UeocLayRelative = /*#__PURE__*/function (_UeocElem) {
 
                 break;
 
-              case UeocRelPosition.BOTTOM_RIGHT:
+              case exports.UeocRelPosition.BOTTOM_RIGHT:
                 cssOj1.right = 0;
                 cssOj1.bottom = 0;
 
-                if (geom.vHS === UeocSize.FILL) {
+                if (geom.vHS === exports.UeocSize.FILL) {
                   cssOj1.top = 0;
-                } else if (geom.vWS === UeocSize.FILL) {
+                } else if (geom.vWS === exports.UeocSize.FILL) {
                   cssOj1.left = 0;
                 }
 
                 break;
 
-              case UeocRelPosition.CENTER_LEFT:
+              case exports.UeocRelPosition.CENTER_LEFT:
                 cssOj1.left = 0;
 
-                if (geom.vHS === UeocSize.FILL) {
+                if (geom.vHS === exports.UeocSize.FILL) {
                   cssOj1.bottom = 0;
                   cssOj1.top = 0;
-                } else if (geom.vWS === UeocSize.FILL) {
+                } else if (geom.vWS === exports.UeocSize.FILL) {
                   cssOj1.top = '50%';
                   cssOj1.transform = "translate(0, " + tVert(child) + ")";
                   cssOj1.right = 0;
@@ -766,13 +760,13 @@ var UeocLayRelative = /*#__PURE__*/function (_UeocElem) {
 
                 break;
 
-              case UeocRelPosition.CENTER_CENTER:
-                if (geom.vHS === UeocSize.FILL) {
+              case exports.UeocRelPosition.CENTER_CENTER:
+                if (geom.vHS === exports.UeocSize.FILL) {
                   cssOj1.left = '50%';
                   cssOj1.transform = "translate(" + tHoriz(child) + ", 0)";
                   cssOj1.bottom = 0;
                   cssOj1.top = 0;
-                } else if (geom.vWS === UeocSize.FILL) {
+                } else if (geom.vWS === exports.UeocSize.FILL) {
                   cssOj1.left = 0;
                   cssOj1.right = 0;
                   cssOj1.top = '50%';
@@ -785,13 +779,13 @@ var UeocLayRelative = /*#__PURE__*/function (_UeocElem) {
 
                 break;
 
-              case UeocRelPosition.CENTER_RIGHT:
+              case exports.UeocRelPosition.CENTER_RIGHT:
                 cssOj1.right = 0;
 
-                if (geom.vHS === UeocSize.FILL) {
+                if (geom.vHS === exports.UeocSize.FILL) {
                   cssOj1.bottom = 0;
                   cssOj1.top = 0;
-                } else if (geom.vWS === UeocSize.FILL) {
+                } else if (geom.vWS === exports.UeocSize.FILL) {
                   cssOj1.top = '50%';
                   cssOj1.transform = "translate(0, " + tVert(child) + ")";
                   cssOj1.left = 0;
@@ -1123,8 +1117,12 @@ exports.UeocAlignSPlus = UeocAlignSPlus;
 exports.UeocBorder = UeocBorder;
 exports.UeocElem = UeocElem;
 exports.UeocEmpty = UeocEmpty;
+exports.UeocGeometry = UeocGeometry;
 exports.UeocLayFlex = UeocLayFlex;
 exports.UeocLayRelative = UeocLayRelative;
+exports.UeocMargins = UeocMargins;
+exports.UeocPaddings = UeocPaddings;
 exports.UeocTextElem = UeocTextElem;
+exports.UeocTextStyle = UeocTextStyle;
 exports.UeocWrap = UeocWrap;
 //# sourceMappingURL=ueoc-lib.cjs.development.js.map

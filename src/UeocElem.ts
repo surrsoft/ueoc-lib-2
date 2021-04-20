@@ -1,8 +1,8 @@
+import { CreateCSSProperties } from '@material-ui/styles';
 import { UeocGeometry, UeocSize } from './simple/UeocGeometry';
 import { UeocBorder } from './simple/UeocBorder';
 import { UeocPaddings } from './simple/UeocPaddings';
 import { UeocMargins } from './simple/UeocMargins';
-import { CreateCSSProperties } from '@material-ui/styles';
 
 
 export abstract class UeocElem {

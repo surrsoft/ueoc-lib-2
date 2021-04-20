@@ -329,7 +329,7 @@ var UeocElem = /*#__PURE__*/function () {
   return UeocElem;
 }();
 
-function UeocEmpty (props) {
+function UeocEmpty(props) {
   return React.createElement("div", {
     style: {
       width: props.w || 0,
@@ -547,8 +547,6 @@ var UeocLayFlex = /*#__PURE__*/function (_UeocElem) {
           return el.child === child;
         })) == null ? void 0 : _this2$vChildsStartAl.align, (_child$vGeometry = child.vGeometry) == null ? void 0 : _child$vGeometry.vWS, (_child$vGeometry2 = child.vGeometry) == null ? void 0 : _child$vGeometry2.vHS)
       };
-      console.log('!!-!!-!! 1321-10 cssOjAdding {210320132109}\n', cssOjAdding); // del+
-
       child.nobCssOjAddingSet(cssOjAdding);
       return child.build();
     }), function () {
@@ -1116,5 +1114,5 @@ var UeocBorder = /*#__PURE__*/function () {
   return UeocBorder;
 }();
 
-export { UeocAlign, UeocAlignCls, UeocAlignPlus, UeocAlignS, UeocAlignSPlus, UeocBorder, UeocElem, UeocEmpty, UeocLayFlex, UeocLayRelative, UeocOrient, UeocTextElem, UeocWrap };
+export { UeocAlign, UeocAlignCls, UeocAlignPlus, UeocAlignS, UeocAlignSPlus, UeocBorder, UeocElem, UeocEmpty, UeocGeometry, UeocLayFlex, UeocLayRelative, UeocMargins, UeocOrient, UeocPaddings, UeocRelPosition, UeocSize, UeocTextElem, UeocTextStyle, UeocWrap };
 //# sourceMappingURL=ueoc-lib.esm.js.map
