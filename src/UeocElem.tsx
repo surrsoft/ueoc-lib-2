@@ -156,6 +156,11 @@ export abstract class UeocElem {
     return this;
   }
 
+  show(enable: boolean): this {
+    this.vHide = !enable
+    return this;
+  }
+
   nobCssOjAddingSet(cssOjAdding: CreateCSSProperties) {
     this.vCssOjAdding = cssOjAdding
   }
