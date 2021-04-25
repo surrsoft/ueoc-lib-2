@@ -195,6 +195,11 @@ var UeocElem = /*#__PURE__*/function () {
     return this;
   };
 
+  _proto.key = function key(_key) {
+    this.vKey = _key;
+    return this;
+  };
+
   _proto.utPaddings = function utPaddings(sizePx) {
     this.fnPaddingsGetAnd().all(sizePx);
     return this;
@@ -536,7 +541,7 @@ var UeocLayFlex = /*#__PURE__*/function (_UeocElem) {
 
     return React.createElement("div", {
       className: classes.container
-    }, this.vChildsStart.map(function (child) {
+    }, this.vChildsStart.map(function (child, index) {
       var _this2$vChildsStartAl, _child$vGeometry, _child$vGeometry2;
 
       var cssOjAdding = {
@@ -547,6 +552,11 @@ var UeocLayFlex = /*#__PURE__*/function (_UeocElem) {
         })) == null ? void 0 : _this2$vChildsStartAl.align, (_child$vGeometry = child.vGeometry) == null ? void 0 : _child$vGeometry.vWS, (_child$vGeometry2 = child.vGeometry) == null ? void 0 : _child$vGeometry2.vHS)
       };
       child.nobCssOjAddingSet(cssOjAdding);
+
+      if (!child.vKey) {
+        child.vKey = index;
+      }
+
       return child.build();
     }), function () {
       if (_this2.vChildBase) {
@@ -577,6 +587,11 @@ var UeocLayFlex = /*#__PURE__*/function (_UeocElem) {
       } : {
         marginTop: 'auto'
       } : {}));
+
+      if (!child.vKey) {
+        child.vKey = index;
+      }
+
       return child.build();
     }));
   };
@@ -800,7 +815,9 @@ var UeocLayRelative = /*#__PURE__*/function (_UeocElem) {
         }
       }
 
-      child.nobCssOjAddingSet(cssOj1);
+      child.nobCssOjAddingSet(cssOj1); // ---
+      // ---
+
       return child.build();
     }));
   };
@@ -1034,9 +1051,12 @@ var UeocTextElem = /*#__PURE__*/function (_UeocElem) {
       container: cssOj
     })(); // ---
 
-    return React.createElement("div", {
+    var attrs = this.vKey ? {
+      key: this.vKey
+    } : {};
+    return React.createElement("div", Object.assign({}, attrs, {
       className: classes.container
-    }, this.vText);
+    }), this.vText);
   };
 
   return UeocTextElem;

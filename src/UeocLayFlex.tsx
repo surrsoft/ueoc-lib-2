@@ -83,7 +83,13 @@ export class UeocLayFlex extends UeocElem {
       return UeocAlignPlus.toCssFormat(align)
     }
 
-    return <div className={classes.container}>
+    const attrs0 = {};
+    if (this.vOnClick) {
+      // @ts-ignore
+      attrs0.onClick = this.vOnClick;
+    }
+
+    return <div className={classes.container} {...attrs0}>
       {this.vChildsStart.map((child, index) => {
         const cssOjAdding = {
           flexShrink: 0,

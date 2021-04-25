@@ -117,6 +117,10 @@ export class UeocTextElem extends UeocElem {
 
     // ---
     const attrs = this.vKey ? {key: this.vKey} : {};
+    if (this.vOnClick) {
+      // @ts-ignore
+      attrs.onClick = this.vOnClick
+    }
 
     return <div {...attrs} className={classes.container}>
       {this.vText}

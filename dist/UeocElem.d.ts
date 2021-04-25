@@ -12,6 +12,7 @@ export declare abstract class UeocElem {
     vBgColor: string;
     vCssOjAdding?: CreateCSSProperties;
     vOtherCss?: CreateCSSProperties;
+    vKey?: number | string;
     private fnPaddingsGetAnd;
     private fnMarginsGetAnd;
     private fnGeomentryGetAnd;
@@ -25,6 +26,7 @@ export declare abstract class UeocElem {
     utH(px: number | UeocSize): this;
     border(border: UeocBorder): this;
     paddings(paddings: UeocPaddings): this;
+    key(key: number | string): this;
     utPaddings(sizePx: number): this;
     utPaddingsFour(topPx: number, rightPx: number, bottomPx: number, leftPx: number): this;
     utPaddingT(px: number): this;

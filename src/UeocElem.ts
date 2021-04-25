@@ -14,6 +14,7 @@ export abstract class UeocElem {
   public vCssOjAdding?: CreateCSSProperties;
   public vOtherCss?: CreateCSSProperties;
   public vKey?: number | string;
+  public vOnClick?: () => void;
 
   private fnPaddingsGetAnd() {
     if (!this.vPaddings) {
@@ -140,10 +141,14 @@ export abstract class UeocElem {
     return this
   }
 
-
   bgColor(color: string): this {
     this.vBgColor = color;
     return this
+  }
+
+  onClick(onClick: () => void): this {
+    this.vOnClick = onClick
+    return this;
   }
 
   nobCssOjAddingSet(cssOjAdding: CreateCSSProperties) {

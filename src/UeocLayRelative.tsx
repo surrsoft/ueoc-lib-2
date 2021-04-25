@@ -44,8 +44,14 @@ export class UeocLayRelative extends UeocElem {
       return `calc(-50% - ${elem.vMargins ? elem.vMargins.vLeftPx : 0}px)`;
     }
 
-// ---
-    return <div className={classes.container} style={{position: 'relative'}}>
+    // ---
+    const attrs0 = {};
+    if (this.vOnClick) {
+      // @ts-ignore
+      attrs0.onClick = this.vOnClick;
+    }
+
+    return <div className={classes.container} style={{position: 'relative'}} {...attrs0}>
       {this.vElemAndPosArr.map(el => {
         const {child, position} = el;
         const geom = child.vGeometry;
