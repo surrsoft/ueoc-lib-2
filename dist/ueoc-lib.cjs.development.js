@@ -270,8 +270,8 @@ var UeocElem = /*#__PURE__*/function () {
     return this;
   };
 
-  _proto.onClick = function onClick(_onClick) {
-    this.vOnClick = _onClick;
+  _proto.onClickFn = function onClickFn(_onClickFn) {
+    this.vOnClick = _onClickFn;
     return this;
   };
 

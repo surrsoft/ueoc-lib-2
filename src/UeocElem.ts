@@ -4,7 +4,6 @@ import { UeocBorder } from './simple/UeocBorder';
 import { UeocPaddings } from './simple/UeocPaddings';
 import { UeocMargins } from './simple/UeocMargins';
 
-
 export abstract class UeocElem {
   public vGeometry?: UeocGeometry
   public vBorder?: UeocBorder
@@ -14,7 +13,7 @@ export abstract class UeocElem {
   public vCssOjAdding?: CreateCSSProperties;
   public vOtherCss?: CreateCSSProperties;
   public vKey?: number | string;
-  public vOnClick?: () => void;
+  public vOnClick?: () => any;
 
   private fnPaddingsGetAnd() {
     if (!this.vPaddings) {
@@ -146,7 +145,7 @@ export abstract class UeocElem {
     return this
   }
 
-  onClickFn(onClickFn: () => void): this {
+  onClickFn(onClickFn: () => any): this {
     this.vOnClick = onClickFn;
     return this;
   }
