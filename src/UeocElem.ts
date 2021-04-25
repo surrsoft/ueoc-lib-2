@@ -146,8 +146,8 @@ export abstract class UeocElem {
     return this
   }
 
-  onClick(onClick: () => void): this {
-    this.vOnClick = onClick;
+  onClickFn(onClickFn: () => void): this {
+    this.vOnClick = onClickFn;
     return this;
   }
 
