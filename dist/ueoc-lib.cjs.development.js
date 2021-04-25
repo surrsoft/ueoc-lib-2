@@ -270,6 +270,11 @@ var UeocElem = /*#__PURE__*/function () {
     return this;
   };
 
+  _proto.onClick = function onClick(_onClick) {
+    this.vOnClick = _onClick;
+    return this;
+  };
+
   _proto.nobCssOjAddingSet = function nobCssOjAddingSet(cssOjAdding) {
     this.vCssOjAdding = cssOjAdding;
   } // ---
@@ -539,9 +544,16 @@ var UeocLayFlex = /*#__PURE__*/function (_UeocElem) {
       return UeocAlignPlus.toCssFormat(align);
     };
 
-    return React.createElement("div", {
+    var attrs0 = {};
+
+    if (this.vOnClick) {
+      // @ts-ignore
+      attrs0.onClick = this.vOnClick;
+    }
+
+    return React.createElement("div", Object.assign({
       className: classes.container
-    }, this.vChildsStart.map(function (child, index) {
+    }, attrs0), this.vChildsStart.map(function (child, index) {
       var _this2$vChildsStartAl, _child$vGeometry, _child$vGeometry2;
 
       var cssOjAdding = {
@@ -653,12 +665,19 @@ var UeocLayRelative = /*#__PURE__*/function (_UeocElem) {
     } // ---
 
 
-    return React.createElement("div", {
+    var attrs0 = {};
+
+    if (this.vOnClick) {
+      // @ts-ignore
+      attrs0.onClick = this.vOnClick;
+    }
+
+    return React.createElement("div", Object.assign({
       className: classes.container,
       style: {
         position: 'relative'
       }
-    }, this.vElemAndPosArr.map(function (el) {
+    }, attrs0), this.vElemAndPosArr.map(function (el) {
       var child = el.child,
           position = el.position;
       var geom = child.vGeometry;
@@ -1054,6 +1073,12 @@ var UeocTextElem = /*#__PURE__*/function (_UeocElem) {
     var attrs = this.vKey ? {
       key: this.vKey
     } : {};
+
+    if (this.vOnClick) {
+      // @ts-ignore
+      attrs.onClick = this.vOnClick;
+    }
+
     return React.createElement("div", Object.assign({}, attrs, {
       className: classes.container
     }), this.vText);
