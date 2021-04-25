@@ -25,6 +25,9 @@ export class UeocLayRelative extends UeocElem {
   vElemAndPosArr: UeocElemAndPos[] = []
 
   build() {
+    if (this.vHide) {
+      return <></>
+    }
     const cssOj = this.nobCssOj()
 
     if (this.vOtherCss) {

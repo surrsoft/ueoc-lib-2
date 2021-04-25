@@ -14,6 +14,7 @@ export declare abstract class UeocElem {
     vOtherCss?: CreateCSSProperties;
     vKey?: number | string;
     vOnClick?: () => any;
+    vHide: boolean;
     private fnPaddingsGetAnd;
     private fnMarginsGetAnd;
     private fnGeomentryGetAnd;
@@ -43,6 +44,7 @@ export declare abstract class UeocElem {
     utMarginsL(px: number): this;
     bgColor(color: string): this;
     onClickFn(onClickFn: () => any): this;
+    hide(enable: boolean): this;
     nobCssOjAddingSet(cssOjAdding: CreateCSSProperties): void;
     nobCssOj(): CreateCSSProperties;
     abstract build(): JSX.Element;

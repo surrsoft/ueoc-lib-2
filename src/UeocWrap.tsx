@@ -11,6 +11,9 @@ export class UeocWrap extends UeocElem {
   }
 
   build(): JSX.Element {
+    if (this.vHide) {
+      return <></>
+    }
     if (this.vChild) {
       const cssOj = this.nobCssOj()
       if (this.vOtherCss) {

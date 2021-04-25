@@ -132,6 +132,7 @@ var UeocMargins = /*#__PURE__*/function (_UeocFourSize) {
 var UeocElem = /*#__PURE__*/function () {
   function UeocElem() {
     this.vBgColor = '';
+    this.vHide = false;
   }
 
   var _proto = UeocElem.prototype;
@@ -272,6 +273,11 @@ var UeocElem = /*#__PURE__*/function () {
 
   _proto.onClickFn = function onClickFn(_onClickFn) {
     this.vOnClick = _onClickFn;
+    return this;
+  };
+
+  _proto.hide = function hide(enable) {
+    this.vHide = enable;
     return this;
   };
 
@@ -515,6 +521,10 @@ var UeocLayFlex = /*#__PURE__*/function (_UeocElem) {
   _proto.build = function build() {
     var _this2 = this;
 
+    if (this.vHide) {
+      return React.createElement(React.Fragment, null);
+    }
+
     var cssOj = this.nobCssOj();
 
     if (this.vOtherCss) {
@@ -645,6 +655,10 @@ var UeocLayRelative = /*#__PURE__*/function (_UeocElem) {
   var _proto = UeocLayRelative.prototype;
 
   _proto.build = function build() {
+    if (this.vHide) {
+      return React.createElement(React.Fragment, null);
+    }
+
     var cssOj = this.nobCssOj();
 
     if (this.vOtherCss) {
@@ -1002,6 +1016,10 @@ var UeocTextElem = /*#__PURE__*/function (_UeocElem) {
   _proto.build = function build() {
     var _this$vTextAlign, _this$vTextAlign2;
 
+    if (this.vHide) {
+      return React.createElement(React.Fragment, null);
+    }
+
     var cssOj = this.nobCssOj();
 
     if (this.vOtherCss) {
@@ -1102,6 +1120,10 @@ var UeocWrap = /*#__PURE__*/function (_UeocElem) {
   };
 
   _proto.build = function build() {
+    if (this.vHide) {
+      return React.createElement(React.Fragment, null);
+    }
+
     if (this.vChild) {
       var cssOj = this.nobCssOj();
 

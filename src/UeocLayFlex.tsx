@@ -55,6 +55,9 @@ export class UeocLayFlex extends UeocElem {
   }
 
   build(): JSX.Element {
+    if (this.vHide) {
+      return <></>
+    }
     const cssOj = this.nobCssOj()
 
     if (this.vOtherCss) {

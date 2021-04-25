@@ -14,6 +14,7 @@ export abstract class UeocElem {
   public vOtherCss?: CreateCSSProperties;
   public vKey?: number | string;
   public vOnClick?: () => any;
+  public vHide: boolean = false
 
   private fnPaddingsGetAnd() {
     if (!this.vPaddings) {
@@ -150,6 +151,11 @@ export abstract class UeocElem {
     return this;
   }
 
+  hide(enable: boolean): this {
+    this.vHide = enable;
+    return this;
+  }
+
   nobCssOjAddingSet(cssOjAdding: CreateCSSProperties) {
     this.vCssOjAdding = cssOjAdding
   }
@@ -204,4 +210,5 @@ export abstract class UeocElem {
   }
 
   abstract build(): JSX.Element
+
 }
